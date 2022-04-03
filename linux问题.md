@@ -1,6 +1,6 @@
 > /etc/login.defs Linux口令周期设置生效问题(linux下密码过期时间)
 
-![image-20211018092127127](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20211018092127127.png)
+![image-20211018092127127](linux问题.assets/image-20211018092127127.png)
 
 第一行，密码使用最长时间为90天，90天后会有提醒。
 第二行，密码使用最短时间为1天，1天之内是不能修改密码的。
@@ -11,11 +11,11 @@
 
 1. 检测是否含有pam_tally2.so 模块
 
-   ![image-20211018095407862](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20211018095407862.png)
+   ![image-20211018095407862](linux问题.assets/image-20211018095407862.png)
 
 2. 配置 /etc/pam.d/system-auth
 
-   ![image-20211018095507574](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20211018095507574.png)
+   ![image-20211018095507574](linux问题.assets/image-20211018095507574.png)
 
 注意添加的位置，要写在第一行，即#%PAM-1.0的下面。
 
@@ -24,7 +24,7 @@
 此操作只影响终端登录。
 
 **查看用户失败次数**
-![image-20211018095742525](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20211018095742525.png)
+![image-20211018095742525](linux问题.assets/image-20211018095742525.png)
 
 [root@localhost ~]# pam_tally2      --------------------查看所有用户登录失败次数
 
@@ -42,21 +42,21 @@ http://www.361way.com/pam-tally2/4277.html
 
 1. 编辑 /etc/pam.d/sshd
 
-   ![image-20211018095940164](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20211018095940164.png)
+   ![image-20211018095940164](linux问题.assets/image-20211018095940164.png)
 
 > /etc/profile 空闲超时自动退出
 
 **配置/etc/profile TMOUT变量 单位为秒 如下图表示60秒无操作则退出**
 
-![image-20211018100801466](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20211018100801466.png)
+![image-20211018100801466](linux问题.assets/image-20211018100801466.png)
 
 执行 **source /etc/profile**生效配置 
 
 **export TMOUT=60** 生效空闲超时退出
 
-![image-20211018101726976](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20211018101726976.png)
+![image-20211018101726976](linux问题.assets/image-20211018101726976.png)
 
 **UNSET TMOUT** 失效空闲超时
 
-![image-20211018101704150](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20211018101704150.png)
+![image-20211018101704150](linux问题.assets/image-20211018101704150.png)
 

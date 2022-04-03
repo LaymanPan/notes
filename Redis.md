@@ -6,7 +6,7 @@
 
 Redis（Remote Dictionary Server )，即远程字典服务，是一个开源的使用ANSI [C语言](https://baike.baidu.com/item/C语言)编写、支持网络、可基于内存亦可持久化的日志型、Key-Value[数据库](https://baike.baidu.com/item/数据库/103728)，并提供多种语言的API
 
-![image-20210815101204445](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20210815101204445.png)
+![image-20210815101204445](Redis.assets/image-20210815101204445.png)
 
 
 
@@ -44,39 +44,39 @@ Redis（Remote Dictionary Server )，即远程字典服务，是一个开源的�
 
 > 1、下载安装包
 
-![image-20210815201656918](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20210815201656918.png)
+![image-20210815201656918](Redis.assets/image-20210815201656918.png)
 
 >  2、 上传文件并解压
 
-![image-20210815201723050](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20210815201723050.png)
+![image-20210815201723050](Redis.assets/image-20210815201723050.png)
 
 > 3、在解压出来的文件夹中进行编译
 
-![image-20210815202027118](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20210815202027118.png)
+![image-20210815202027118](Redis.assets/image-20210815202027118.png)
 
-![image-20210815202012957](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20210815202012957.png)
+![image-20210815202012957](Redis.assets/image-20210815202012957.png)
 
 
 
 > 4、安装 make PREFIX=/usr/local/redis install
 
-![image-20210815202125409](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20210815202125409.png)
+![image-20210815202125409](Redis.assets/image-20210815202125409.png)
 
 > 5、配置redis配置文件
 
-![image-20210815202613210](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20210815202613210.png)
+![image-20210815202613210](Redis.assets/image-20210815202613210.png)
 
 > 6、启动redis服务 redis-server [配置文件路径]
 
-![image-20210815202813413](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20210815202813413.png)
+![image-20210815202813413](Redis.assets/image-20210815202813413.png)
 
 > 7、使用redis-cli进行连接 redis-cli -p 6379
 
-![image-20210815202852985](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20210815202852985.png)
+![image-20210815202852985](Redis.assets/image-20210815202852985.png)
 
 > 8、关闭redis关闭服务器 redis-cli连接下 执行shutdown
 
-![image-20210815203148418](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20210815203148418.png)
+![image-20210815203148418](Redis.assets/image-20210815203148418.png)
 
 
 
@@ -86,7 +86,7 @@ Redis（Remote Dictionary Server )，即远程字典服务，是一个开源的�
 
 >  1、 redis默认有16个数据库默认使用第0个
 
-![image-20210815204500124](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20210815204500124.png)
+![image-20210815204500124](Redis.assets/image-20210815204500124.png)
 
 ```bash
 127.0.0.1:6379> select 1 	#切换到数据库1
@@ -137,7 +137,7 @@ Redis 为什么单线程还这么快
 
 > 官网
 
-![image-20210815214707739](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20210815214707739.png)
+![image-20210815214707739](Redis.assets/image-20210815214707739.png)
 
 ### Redis-Key
 
@@ -621,7 +621,7 @@ ZDIFF ZINTER ZUNION
 
 ### geospatial
 
-![image-20210907213031186](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20210907213031186.png)
+![image-20210907213031186](Redis.assets/image-20210907213031186-16489625515461.png)
 
 ```bash
 127.0.0.1:6379> GEOADD china:city 120.153576 30.287459 hangzhou   # 添加坐标

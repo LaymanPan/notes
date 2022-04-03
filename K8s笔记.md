@@ -1,8 +1,8 @@
 # K8s笔记
 
-![image-20210630205645815](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20210630205645815.png)
+![image-20210630205645815](K8s笔记.assets/image-20210630205645815.png)
 
-![image-20210630210009368](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20210630210009368.png)
+![image-20210630210009368](K8s笔记.assets/image-20210630210009368.png)
 
 ## 组件
 
@@ -265,7 +265,7 @@ k8snode     NotReady   <none>   2m15s   v1.19.4
 
 ```
 
-![image-20210627140101735](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20210627140101735.png)
+![image-20210627140101735](K8s笔记.assets/image-20210627140101735.png)
 
 > 部署网络插件
 
@@ -375,11 +375,11 @@ Complete!
 
 **在node服务器上查看nginx镜像和容器**
 
-![image-20210627203408563](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20210627203408563.png)
+![image-20210627203408563](K8s笔记.assets/image-20210627203408563.png)
 
 **页面访问nginx**
 
-![image-20210627204118117](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20210627204118117.png)
+![image-20210627204118117](K8s笔记.assets/image-20210627204118117.png)
 
 ## 实战：在K8s集群上部署Tomcat
 
@@ -393,7 +393,7 @@ deployment.apps/tomcat created
 service/tomcat exposed
 ```
 
-![image-20210627205513656](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20210627205513656.png)
+![image-20210627205513656](K8s笔记.assets/image-20210627205513656.png)
 
 ## 指令
 
@@ -599,7 +599,7 @@ wget https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.1/aio/deploy/re
 
 **修改文件内容**
 
-·![image-20210628141936360](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20210628141936360.png)
+·![image-20210628141936360](K8s笔记.assets/image-20210628141936360.png)
 
 **应用yaml文件**
 
@@ -620,9 +620,9 @@ kubernetes-dashboard-665f4c5ff-jwd6g         1/1     Running   0          2m14s
 
 **浏览器访问https://192.168.133.130:30001/#/overview?namespace=default**
 
-![image-20210628142341517](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20210628142341517.png)
+![image-20210628142341517](K8s笔记.assets/image-20210628142341517.png)
 
-![image-20210628142330668](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20210628142330668.png)
+![image-20210628142330668](K8s笔记.assets/image-20210628142330668.png)
 
 **生成token所需指令**
 
@@ -672,7 +672,7 @@ token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IjNXUzJuV2wxeFl5c0V3azNJaWtGc0hjUzZfczlO
 
 **使用方式二、yaml文件中指定**
 
-![image-20210628220749470](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20210628220749470.png)
+![image-20210628220749470](K8s笔记.assets/image-20210628220749470.png)
 
 这种方式的不足：
 
@@ -686,7 +686,7 @@ token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IjNXUzJuV2wxeFl5c0V3azNJaWtGc0hjUzZfczlO
 
 >Ingress Nginx
 
-![image-20210628221114799](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20210628221114799.png)
+![image-20210628221114799](K8s笔记.assets/image-20210628221114799.png)
 
 **使用Ingress Nginx的步骤**
 
@@ -720,7 +720,7 @@ job.batch/ingress-nginx-admission-patch created
 
 **查看Ingress的状态**
 
-![image-20210628221752349](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20210628221752349.png)
+![image-20210628221752349](K8s笔记.assets/image-20210628221752349.png)
 
 
 
@@ -752,7 +752,7 @@ spec:
 
 kubectl get ing
 
-![image-20210628222028190](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20210628222028190.png)
+![image-20210628222028190](K8s笔记.assets/image-20210628222028190.png)
 
 
 

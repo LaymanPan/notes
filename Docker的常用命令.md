@@ -565,7 +565,7 @@ http://192.168.133.128:9000
 
 ```
 
-![image-20210615221118499](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20210615221118499.png)
+![image-20210615221118499](Docker的常用命令.assets/image-20210615221118499.png)
 
 可视化面板一般不用
 
@@ -857,7 +857,7 @@ drwxr-xr-x.   2 root root  25 Jun 19 14:22 volume02
 
 多个MySQL同步数据
 
-![image-20210619223022095](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20210619223022095.png)
+![image-20210619223022095](Docker的常用命令.assets/image-20210619223022095.png)
 
 ```shell
 # 运行第一个容器
@@ -889,7 +889,7 @@ drwxr-xr-x.   2 root root  25 Jun 19 14:22 volume02
 
 4、每个指令都会创建提交一个新的镜像层
 
-![image-20210619231821192](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20210619231821192.png)
+![image-20210619231821192](Docker的常用命令.assets/image-20210619231821192.png)
 
 DockerFile 是面向开发的，作镜像就是要编写DockerFile文件
 
@@ -903,7 +903,7 @@ Docker容器：容器是由镜像运行而来
 
 ## DockerFile的指令
 
-![image-20210619232258992](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20210619232258992.png)
+![image-20210619232258992](Docker的常用命令.assets/image-20210619232258992.png)
 
 > 创建一个自己的Centos
 
@@ -1112,7 +1112,7 @@ DockerFile 许多命令十分相似，需理解其中的意思
 
 > 测试
 
-![image-20210620230942466](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20210620230942466.png)
+![image-20210620230942466](Docker的常用命令.assets/image-20210620230942466.png)
 
 ``` shell
 # Docker 是如何处理容器网络访问的
@@ -1151,11 +1151,11 @@ rtt min/avg/max/mdev = 0.047/0.077/0.107/0.030 ms
 
    
 
-![image-20210620231941659](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20210620231941659.png)
+![image-20210620231941659](Docker的常用命令.assets/image-20210620231941659.png)
 
 > 再启动一个 
 
-![image-20210620232129732](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20210620232129732.png)
+![image-20210620232129732](Docker的常用命令.assets/image-20210620232129732.png)
 
 ```shell
 # 我们发现这个容器带来的网卡 都是一对一对的
@@ -1175,7 +1175,7 @@ rtt min/avg/max/mdev = 0.047/0.077/0.107/0.030 ms
 
 > 查看所有docker 网络
 
-![image-20210623215536948](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20210623215536948.png)
+![image-20210623215536948](Docker的常用命令.assets/image-20210623215536948.png)
 
 **网络模式**
 
