@@ -529,7 +529,7 @@ drwxr-xr-x. 3 root root  51 Jul 19  2020 src
 
 ## 小结
 
-![image-20210614224623474](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20210614224623474.png)
+![image-20210614224623474](Docker的常用命令.assets/image-20210614224623474.png)
 
 
 

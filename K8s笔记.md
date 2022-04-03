@@ -607,7 +607,7 @@ wget https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.1/aio/deploy/re
 [root@k8sMaster ~]# kubectl apply -f kubernetes-dashboard.yaml
 ```
 
-![image-20210628142150971](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20210628142150971.png)
+![image-20210628142150971](K8s笔记.assets/image-20210628142150971.png)
 
 **查看pod**
 
