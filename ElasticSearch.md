@@ -6,11 +6,11 @@ https://www.elastic.co/cn/start
 
 windows 下载完成后解压缩 运行bin目录下的elasticsearch.bat即可
 
-![image-20220313135716365](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313135716365.png)
+![image-20220313135716365](ElasticSearch.assets/image-20220313135716365.png)
 
 ### 2.文件目录
 
-![image-20220313140823504](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313140823504.png)
+![image-20220313140823504](ElasticSearch.assets/image-20220313140823504.png)
 
 ### 3.熟悉目录
 
@@ -29,7 +29,7 @@ plugins 插件
 
 运行elasticsearch.bat
 
-![image-20220313141502972](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313141502972.png)
+![image-20220313141502972](ElasticSearch.assets/image-20220313141502972.png)
 
 > 中文乱码 修改jvm.options
 
@@ -40,7 +40,7 @@ plugins 插件
 
 
 
-![image-20220313141522244](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313141522244.png)
+![image-20220313141522244](ElasticSearch.assets/image-20220313141522244.png)
 
 ## 安装可视化界面 es head的创建
 
@@ -55,7 +55,7 @@ npm run start
 
 默认会有跨域问题
 
-![image-20220313144528338](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313144528338.png)
+![image-20220313144528338](ElasticSearch.assets/image-20220313144528338.png)
 
 修改elasticsearch.yaml增加跨域支持
 
@@ -66,7 +66,7 @@ http.cors.allow-origin: "*"
 
 重启服务器即可
 
-![image-20220313144810616](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313144810616.png)
+![image-20220313144810616](ElasticSearch.assets/image-20220313144810616.png)
 
 可以把索引比作 数据库 ， 文档比作 数据
 
@@ -94,17 +94,17 @@ Kibana版本需要和ElasticSearch版本一致
 
 解压完成后
 
-![image-20220313150417914](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313150417914.png)
+![image-20220313150417914](ElasticSearch.assets/image-20220313150417914.png)
 
 运行 bin\kibana.bat 默认端口 5601
 
-![image-20220313150547252](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313150547252.png)
+![image-20220313150547252](ElasticSearch.assets/image-20220313150547252.png)
 
 ### 2.页面访问
 
 > 遇到报错 TypeError: Invalid character in header content ["kbn-name"]
 
-![image-20220313150814800](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313150814800.png)
+![image-20220313150814800](ElasticSearch.assets/image-20220313150814800.png)
 
 > 解决方法
 
@@ -151,7 +151,7 @@ es在后台把每个索引分成多个分片，每个分片可以在集群的不
 
 单个服务就是一个集群
 
-![image-20220313152617125](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313152617125.png)
+![image-20220313152617125](ElasticSearch.assets/image-20220313152617125.png)
 
 ### 4.逻辑设计
 
@@ -183,9 +183,9 @@ es在后台把每个索引分成多个分片，每个分片可以在集群的不
 
 一个集群至少有一个节点，而一个节点就是一个es进程，节点可以有多个索引默认的，如果你创建索引，那么索引将会有5个分片（primary shard，又称为主分片）构成的，每一个分片会有一个副本（replica shard，又称为复制分片）
 
-![image-20220313154132395](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313154132395.png)
+![image-20220313154132395](ElasticSearch.assets/image-20220313154132395.png)
 
-![image-20220313154830241](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313154830241.png)
+![image-20220313154830241](ElasticSearch.assets/image-20220313154830241.png)
 
 如上图就是一个有3个节点的集群，可以看到主分片和对应的复制分片都不会在同一个节点，这样有利于一个节点挂掉了，数据也不至于丢失。实际上一个分片就是一个Lucene索引，一个包含 **倒排索引** 的文件目录，倒排索引的结构使得es在不扫描全部文档的情况下，就能告诉你那些文档包含了特定的关键字。
 
@@ -201,7 +201,7 @@ es在后台把每个索引分成多个分片，每个分片可以在集群的不
 
 > 字段类型
 
-![Springboot2.x整合ElasticSearch7.x实战（三）_经验分享_05](https://s8.51cto.com/images/blog/202106/21/fd33ea72950ef35d9dea9bfe4f7e2fc3.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=)
+![Springboot2.x整合ElasticSearch7.x实战（三）_经验分享_05](ElasticSearch.assets/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=.png)
 
 
 
@@ -219,45 +219,45 @@ IK 的版本和ES保持一致
 
 下载解压成文件夹ik 到 es/plugins
 
-![image-20220313163118479](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313163118479.png)
+![image-20220313163118479](ElasticSearch.assets/image-20220313163118479.png)
 
 ### 2.重启ES
 
-![image-20220313163221583](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313163221583.png)
+![image-20220313163221583](ElasticSearch.assets/image-20220313163221583.png)
 
 查看安装好的插件
 
-![image-20220313163313800](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313163313800.png)
+![image-20220313163313800](ElasticSearch.assets/image-20220313163313800.png)
 
 ### 3.使用kibana测试
 
 > ik_smart最少切分
 
-![image-20220313163917658](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313163917658.png)
+![image-20220313163917658](ElasticSearch.assets/image-20220313163917658.png)
 
 > ik_max_word 最细粒度
 
-![image-20220313163803813](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313163803813.png)
+![image-20220313163803813](ElasticSearch.assets/image-20220313163803813.png)
 
 
 
 > 发现名字被拆分成单个字，需要手动添加进IK分词字典
 
-![image-20220313164159151](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313164159151.png)
+![image-20220313164159151](ElasticSearch.assets/image-20220313164159151.png)
 
 
 
 > 增加额外的字典
 
-![image-20220313164518980](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313164518980.png)
+![image-20220313164518980](ElasticSearch.assets/image-20220313164518980.png)
 
 > 修改 ik /config/IKAnalyzer.cfg
 
-![image-20220313164533290](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313164533290.png)
+![image-20220313164533290](ElasticSearch.assets/image-20220313164533290.png)
 
 重启ES进行测试
 
-![image-20220313165009780](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313165009780.png)
+![image-20220313165009780](ElasticSearch.assets/image-20220313165009780.png)
 
 ## 基础测试
 
@@ -281,25 +281,25 @@ PUT /索引名/类型名/文档ID
 }
 ```
 
-![image-20220313170443669](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313170443669.png)
+![image-20220313170443669](ElasticSearch.assets/image-20220313170443669.png)
 
-![image-20220313170533447](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313170533447.png)
+![image-20220313170533447](ElasticSearch.assets/image-20220313170533447.png)
 
 ### 2.指定数据类型创建索引
 
-![image-20220313170933635](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313170933635.png)
+![image-20220313170933635](ElasticSearch.assets/image-20220313170933635.png)
 
-![image-20220313170947206](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313170947206.png)
+![image-20220313170947206](ElasticSearch.assets/image-20220313170947206.png)
 
 ### 3.获取索引信息
 
-![image-20220313171056764](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313171056764.png)
+![image-20220313171056764](ElasticSearch.assets/image-20220313171056764.png)
 
 ### 4.查看默认信息
 
-![image-20220313171222431](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313171222431.png)
+![image-20220313171222431](ElasticSearch.assets/image-20220313171222431.png)
 
-![image-20220313171248507](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313171248507.png)
+![image-20220313171248507](ElasticSearch.assets/image-20220313171248507.png)
 
 如果自己的文档没有指定字段类型，那么es就会给我们默认配置字段类型！
 
@@ -309,9 +309,9 @@ _cat/health: 查看健康情况
 
 ### 5.修改文档
 
-![image-20220313171850693](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313171850693.png)
+![image-20220313171850693](ElasticSearch.assets/image-20220313171850693.png)
 
-![image-20220313171946920](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313171946920.png)
+![image-20220313171946920](ElasticSearch.assets/image-20220313171946920.png)
 
 可以增加原先索引中没有的字段
 
@@ -321,17 +321,17 @@ _cat/health: 查看健康情况
 
 > 删除文档 DELETE /{indexName}/_doc/{docId}
 
-![image-20220313172113217](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313172113217.png)
+![image-20220313172113217](ElasticSearch.assets/image-20220313172113217.png)
 
-![image-20220313172214787](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313172214787.png)
+![image-20220313172214787](ElasticSearch.assets/image-20220313172214787.png)
 
 > 删除索引 DELETE /{indexName}
 
-![image-20220313172259877](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313172259877.png)
+![image-20220313172259877](ElasticSearch.assets/image-20220313172259877.png)
 
 使用正则删除
 
-![image-20220313172436907](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313172436907.png)
+![image-20220313172436907](ElasticSearch.assets/image-20220313172436907.png)
 
 
 
@@ -343,7 +343,7 @@ _cat/health: 查看健康情况
 
 ### 1.添加数据
 
-![image-20220313173402219](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313173402219.png)
+![image-20220313173402219](ElasticSearch.assets/image-20220313173402219.png)
 
 ### 2.查询数据
 
@@ -351,58 +351,58 @@ _cat/health: 查看健康情况
 
 根据ID进行查询
 
-![image-20220313173627781](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313173627781.png)
+![image-20220313173627781](ElasticSearch.assets/image-20220313173627781.png)
 
 ### 3.更新数据
 
 PUT 请求会覆盖原先的数据如果部分字段没有值的话会清空之前的数据
 
-![image-20220313173741225](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313173741225.png)
+![image-20220313173741225](ElasticSearch.assets/image-20220313173741225.png)
 
 POST 则只会影响更新的字段 **推荐使用**
 
-![image-20220313174042991](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313174042991.png)
+![image-20220313174042991](ElasticSearch.assets/image-20220313174042991.png)
 
 ### 4.条件查询
 
 GET /{indexName}/_search?q=field:value 
 模糊查询
 
-![image-20220313174646172](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313174646172.png)
+![image-20220313174646172](ElasticSearch.assets/image-20220313174646172.png)
 
 **请求参数 增加 双引号 则视为精准查询 未添加双引号则会先分词**
 
 如：
 
-![image-20220313175157655](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313175157655.png)
+![image-20220313175157655](ElasticSearch.assets/image-20220313175157655.png)
 
-![image-20220313175215251](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313175215251.png)
+![image-20220313175215251](ElasticSearch.assets/image-20220313175215251.png)
 
 > 复杂查询（排序 分页 高亮 模糊查询 精准查询
 
 ### 1.查询
 
-![image-20220313180003766](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313180003766.png)
+![image-20220313180003766](ElasticSearch.assets/image-20220313180003766.png)
 
 ### 2.返回字段控制
 
-![image-20220313180417404](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313180417404.png)
+![image-20220313180417404](ElasticSearch.assets/image-20220313180417404.png)
 
 ### 3.排序
 
-![image-20220313180816198](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313180816198.png)
+![image-20220313180816198](ElasticSearch.assets/image-20220313180816198.png)
 
 ### 4.分页查询
 
-![image-20220313181001666](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313181001666.png)
+![image-20220313181001666](ElasticSearch.assets/image-20220313181001666.png)
 
 ### 5.bool查询
 
-![image-20220313184203406](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313184203406.png)
+![image-20220313184203406](ElasticSearch.assets/image-20220313184203406.png)
 
 
 
-![image-20220313190349295](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313190349295.png)
+![image-20220313190349295](ElasticSearch.assets/image-20220313190349295.png)
 
 >  must: 多个条件之间类似and连接
 
@@ -412,7 +412,7 @@ GET /{indexName}/_search?q=field:value
 
 不满足则查询到
 
-![image-20220313184436831](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313184436831.png)
+![image-20220313184436831](ElasticSearch.assets/image-20220313184436831-16489611600741.png)
 
 
 
@@ -434,17 +434,17 @@ match：会使用分词器解析（先分析文档，然后再通过分析的文
 
 text会被分词器解析，keyword则不会被分词器解析
 
-![image-20220313201806262](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313201806262.png)
+![image-20220313201806262](ElasticSearch.assets/image-20220313201806262.png)
 
 ### 6.高亮查询
 
-![image-20220313202741306](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313202741306.png)
+![image-20220313202741306](ElasticSearch.assets/image-20220313202741306.png)
 
 > 查询null字段
 
 使用exists
 
-![image-20220313204109728](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313204109728.png)
+![image-20220313204109728](ElasticSearch.assets/image-20220313204109728.png)
 
 
 
@@ -452,13 +452,13 @@ text会被分词器解析，keyword则不会被分词器解析
 
 在早期版本中有missing字段 但新版本已经废弃，使用反向exists进行查询
 
-![image-20220313204145306](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313204145306.png)
+![image-20220313204145306](ElasticSearch.assets/image-20220313204145306.png)
 
 ## SpringBoot整合ES
 
 API 地址：https://www.elastic.co/guide/en/elasticsearch/client/java-rest/current/index.html
 
-![image-20220313205706641](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313205706641.png)
+![image-20220313205706641](ElasticSearch.assets/image-20220313205706641.png)
 
 ### 1.maven地址
 
@@ -472,6 +472,6 @@ API 地址：https://www.elastic.co/guide/en/elasticsearch/client/java-rest/curr
 
 ### 2.保证springboot pom中es版本和服务器一致
 
-![image-20220313214950540](C:\Users\52606\AppData\Roaming\Typora\typora-user-images\image-20220313214950540.png)
+![image-20220313214950540](ElasticSearch.assets/image-20220313214950540.png)
 
 项目地址：https://github.com/LaymanPan/SpringBootTemplate.git
